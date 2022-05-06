@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 import { SectionContainer, SectionHeading, SectionSubheading } from "../../components";
-import { theme } from "../../styles/theme";
 
 export const StyledContainer = styled(({ height, ...props }) => (
   <SectionContainer {...props} />
@@ -25,14 +24,20 @@ export const StyledDescription = styled((props) => <SectionSubheading {...props}
   text-align: center;
 `;
 
+// #################################################
+
 export const StyledInnerContainer = styled((props) => <SectionContainer {...props} />)`
   width: 100%;
   height: 100%;
   border: 2px solid green;
   justify-content: center;
+  @media (max-width: 1024px) {
+    align-items: center;
+    flex-direction: column;
+  }
 `;
 
-export const StyledBackgroundContainer = styled(({ ...props }) => <div {...props}></div>)`
+export const StyledBackgroundContainer = styled(({ ...props }) => <div {...props} />)`
   z-index: 0;
   position: absolute;
   height: 100%;
@@ -54,6 +59,7 @@ export const StyledContentContainer = styled(({ ...props }) => <div {...props}><
   width: 500px;
 `;
 
+// card
 export const StyledItemContainer = styled(({ ...props }) => <div {...props}></div>)`
   display: flex;
   flex-direction: row;
@@ -84,6 +90,7 @@ export const StyledInnerHeading = styled(({ ...props }) => <h2 {...props}></h2>)
   font-weight: 600;
   color: ${({ selected }) => selected && "#006efd"};
   text-decoration: ${({ selected }) => selected && "underline"};
+  text-decoration-color: ${({ selected }) => selected && "#79aff7"};
   margin: 0;
 `;
 

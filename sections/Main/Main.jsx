@@ -11,24 +11,18 @@ import {
 } from "./elements";
 import { Card } from "../../collections/Card";
 
-export const Main = ({ cards, ...props }) => {
-  console.log(props);
+export const Main = ({ cards, image, title, description, background }) => {
   return (
-    <StyledContainer {...props}>
-      <StyledHeading>Managed agency selection</StyledHeading>
-      <StyledDescription>Strengthen your onboarding proccess</StyledDescription>
+    <StyledContainer>
+      <StyledHeading>{title}</StyledHeading>
+      <StyledDescription>{description}</StyledDescription>
 
       <StyledInnerContainer>
         <StyledBackgroundContainer>
-          <Image
-            alt="background"
-            src="/img/background.png"
-            layout="fill"
-            objectFit="cover"
-          />
+          <Image {...background} layout="fill" objectFit="cover" />
         </StyledBackgroundContainer>
         <StyledImageContainer>
-          <Image src="/img/video.png" width="329" height="525" alt="video" layout="" />
+          <Image {...image} />
         </StyledImageContainer>
         <StyledContentContainer>
           {cards.map((card, i) => (

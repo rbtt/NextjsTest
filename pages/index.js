@@ -19,7 +19,7 @@ const mainProps = {
       description:
         "Complete <b>brief writing or simple guidance</b> or what to include, we've got you covered.",
       background: "#f9f9f9",
-      width: "small",
+      width: "87.5%",
       selected: false,
     },
     {
@@ -28,7 +28,7 @@ const mainProps = {
       description:
         "In-depth agency search covering; <b>criteria matching</b>, door knocking and due-dilligence vetting.",
       background: "#f4f4f4",
-      width: "medium",
+      width: "93.33%",
       selected: false,
     },
     {
@@ -37,7 +37,7 @@ const mainProps = {
       description:
         "I Comprehensive <b>pitch management,</b> including comms, diary management and pitch hosting.",
       background: "#f1f1f1",
-      width: "large",
+      width: "100%",
       selected: true,
     },
   ],

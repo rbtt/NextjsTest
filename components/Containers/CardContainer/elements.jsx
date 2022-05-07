@@ -6,8 +6,9 @@ export const StyledCardContainer = styled((props) => <div {...props} />)`
   align-items: center;
   justify-content: center;
   background-color: ${({ bg }) => bg || "#ccc"};
-  margin-top: 1rem;
+  margin-top: 2rem;
   border-radius: 0.5rem;
   padding: 1rem;
   border: ${({ selected }) => selected && "2px solid #006efd"};
+  width: ${({ width }) => width};
 `;

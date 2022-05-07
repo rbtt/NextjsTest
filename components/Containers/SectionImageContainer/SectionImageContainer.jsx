@@ -1,5 +1,5 @@
 import { StyledImageContainer } from "./elements";
 
-export const ImageContainer = ({ ...props }) => {
+export const SectionImageContainer = ({ ...props }) => {
   return <StyledImageContainer {...props} />;
 };

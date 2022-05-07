@@ -17,7 +17,7 @@ export const Main = ({ cards, image, title, description, background }) => {
 
       <InnerContainer>
         <BackgroundContainer>
-          <Image {...background} layout="fill" objectFit="cover" />
+          <Image {...background} layout="raw" />
         </BackgroundContainer>
 
         <SectionImageContainer>

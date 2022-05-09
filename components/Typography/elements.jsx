@@ -53,19 +53,3 @@ export const StyledSectionParagraph = styled((props) => <p {...props} />)`
   line-height: 1.5rem;
   font-weight: 400;
 `;
-
-export const StyledCardHeading = styled(({ ...props }) => <h2 {...props} />)`
-  font-family: Poppins;
-  font-weight: 600;
-  color: ${({ selected }) => selected && "#006efd"};
-  text-decoration: ${({ selected }) => selected && "underline"};
-  text-decoration-color: ${({ selected }) => selected && "#79aff7"};
-  margin: 0;
-`;
-
-export const StyledCardParagraph = styled((props) => (
-  <p dangerouslySetInnerHTML={{ __html: props.children }} className={props.className} />
-))`
-  font-family: Poppins;
-  margin: 0;
-`;

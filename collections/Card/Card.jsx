@@ -1,21 +1,37 @@
+import { useState, useCallback } from "react";
 import Image from "next/image";
+
 import {
-  CardContainer,
-  CardIconContainer,
-  CardTextContainer,
-} from "../../components/Containers";
-import { CardHeading, CardParagraph } from "../../components/Typography";
+  StyledCardContainer,
+  StyledIconWrapper,
+  StyledTextContainer,
+  StyledCardHeading,
+  StyledCardParagraph,
+} from "./elements";
 
 export const Card = (props) => {
+  const [selected, setSelected] = useState(false);
+  const mouseEnterHandler = useCallback(() => {
+    setSelected(true);
+  });
+  const mouseExitHandler = useCallback(() => {
+    setSelected(false);
+  });
   return (
-    <CardContainer width={props.width} bg={props.background} selected={props.selected}>
-      <CardIconContainer>
+    <StyledCardContainer
+      width={props.width}
+      bg={props.background}
+      selected={selected}
+      onMouseEnter={mouseEnterHandler}
+      onMouseLeave={mouseExitHandler}
+    >
+      <StyledIconWrapper>
         <Image src={props.icon} width="56" height="56" />
-      </CardIconContainer>
-      <CardTextContainer>
-        <CardHeading selected={props.selected}>{props.title}</CardHeading>
-        <CardParagraph>{props.description}</CardParagraph>
-      </CardTextContainer>
-    </CardContainer>
+      </StyledIconWrapper>
+      <StyledTextContainer>
+        <StyledCardHeading selected={selected}>{props.title}</StyledCardHeading>
+        <StyledCardParagraph>{props.description}</StyledCardParagraph>
+      </StyledTextContainer>
+    </StyledCardContainer>
   );
 };

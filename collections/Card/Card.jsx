@@ -6,17 +6,17 @@ import {
   StyledIconWrapper,
   StyledTextContainer,
   StyledCardHeading,
-  StyledCardParagraph,
+  StyledCardParagraph
 } from "./elements";
 
 export const Card = (props) => {
   const [selected, setSelected] = useState(false);
   const mouseEnterHandler = useCallback(() => {
     setSelected(true);
-  });
+  }, []);
   const mouseExitHandler = useCallback(() => {
     setSelected(false);
-  });
+  }, []);
   return (
     <StyledCardContainer
       width={props.width}
@@ -26,7 +26,7 @@ export const Card = (props) => {
       onMouseLeave={mouseExitHandler}
     >
       <StyledIconWrapper>
-        <Image src={props.icon} width="56" height="56" />
+        <Image src={props.icon} width="56" height="56" alt="" />
       </StyledIconWrapper>
       <StyledTextContainer>
         <StyledCardHeading selected={selected}>{props.title}</StyledCardHeading>

@@ -1,16 +1,13 @@
 import Image from "next/image";
 
-import {
-  StyledContainer,
-  StyledHeading,
-  StyledDescription,
-  StyledInnerContainer,
-  StyledSmallContainer,
-  StyledImageContainer,
-  StyledBackgroundContainer,
-} from "./elements";
-
+import { StyledContainer, StyledHeading, StyledDescription } from "./elements";
 import { Card } from "../../collections/Card";
+import {
+  InnerContainer,
+  BackgroundContainer,
+  SectionImageContainer,
+  SectionSmallContainer,
+} from "../../components/Containers";
 
 export const Main = ({ cards, image, title, description, background }) => {
   return (
@@ -18,21 +15,21 @@ export const Main = ({ cards, image, title, description, background }) => {
       <StyledHeading>{title}</StyledHeading>
       <StyledDescription>{description}</StyledDescription>
 
-      <StyledInnerContainer>
-        <StyledBackgroundContainer>
-          <Image {...background} layout="fixed" />
-        </StyledBackgroundContainer>
+      <InnerContainer>
+        <BackgroundContainer>
+          <Image {...background} layout="raw" />
+        </BackgroundContainer>
 
-        <StyledImageContainer>
+        <SectionImageContainer>
           <Image {...image} />
-        </StyledImageContainer>
+        </SectionImageContainer>
 
-        <StyledSmallContainer>
+        <SectionSmallContainer>
           {cards.map((card, i) => (
             <Card {...card} key={i} />
           ))}
-        </StyledSmallContainer>
-      </StyledInnerContainer>
+        </SectionSmallContainer>
+      </InnerContainer>
     </StyledContainer>
   );
 };
